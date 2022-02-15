@@ -31,12 +31,17 @@ document.getElementById('create-btn').addEventListener('click', function () {
 })
 
 // ৪. এখন ul এর নিচে একটা ইনপুট ফিল্ড আর একটা বাটন যোগ করো। ইনপুট ফিল্ড এ শুরুতে মান হবে শূন্য(০)। তারপর ইনপুট ফিল্ডের পাশের নতুন বাটন এ যতবার প্রেস করবে ততবার এক এক করে ইনপুট ফিল্ড এর মান এক এক করে বাড়বে।
-
-
-
 // ৫.(চ্যালেঞ্জিং ওয়ান)উপরে বাটনে দুইটা শর্ত আছে। সেটা হচ্ছে সংখ্যা বাড়লেও সেটা হবে সর্বোচ্চ ৫। অর্থাৎ ০ থেকে এক এক করে বেড়ে বেড়ে পাঁচ পর্যন্ত হতে পারে। তার উপরে আর বাড়বে না। এবং ৫ হয়ে গেলে বাটনটা ডিজেবল হয়ে যাবে।
 
-
+let input = document.getElementById('increase-input')
+input.value = 0;
+document.getElementById('increaser').addEventListener('click', function () {
+    if (input.value < 5) {
+        input.value = parseFloat(input.value) + 1
+    } else if (input.value >= 5) {
+        document.getElementById('increaser').setAttribute('disabled',true)
+    }
+})
 
 // প্রজেক্ট চ্যালেঞ্জ
 
